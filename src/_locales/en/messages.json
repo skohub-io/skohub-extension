@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "SkoHub",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "The SkoHub editor will run in the browser and enable structured description of educational resources published anywhere on the web.",
+    "description": "Description of the extension."
+  }
+}
