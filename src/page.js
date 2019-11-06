@@ -1,11 +1,17 @@
-const url = new URL('https://test.skohub.io/editor/')
-url.searchParams.set('schema', 'https://raw.githubusercontent.com/literarymachine/oer-metadata-schemas/generic-OER/oer.json')
+const EDITOR_URL = 'https://test.skohub.io/editor/'
+const SCHEMA_URL = 'https://raw.githubusercontent.com/literarymachine/oer-metadata-schemas/generic-OER/oer.json'
+
+const url = new URL(EDITOR_URL)
+url.searchParams.set('schema', SCHEMA_URL)
 
 const pageGetData = () => {
   return {
     name: document.title,
     id: window.location.href,
-    description: (document.querySelector('meta[name=description]') && document.querySelector('meta[name=description]').content) || ''
+    description: (document.querySelector('meta[name=description]') && document.querySelector('meta[name=description]').content) ||
+    (document.querySelector('meta[property="og:description"]') && document.querySelector('meta[property="og:description"]').content) ||
+    (document.querySelector('meta[property="twitter:description"]') && document.querySelector('meta[property="twitter:description"]').content) ||
+     ''
   }
 }
 
