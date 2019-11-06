@@ -26,7 +26,11 @@
     "scripts": ["background.js"]
   },
 
-  "web_accessible_resources": ["src/page.js"],
+  "web_accessible_resources": [
+    "src/page.js",
+    "icons/chevron-right.svg",
+    "icons/chevron-left.svg"
+  ],
 
   "permissions": [
     "activeTab"
