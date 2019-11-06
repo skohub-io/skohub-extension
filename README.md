@@ -2,7 +2,13 @@
 
 WebExtension to send page data to the skohub-editor
 
-## Instructions for install
+## Instructions for installing
+
+```
+$ git clone https://github.com/hbz/skohub-extension.git
+$ cd skohub-extension
+$ npm install
+```
 
 ### Add to Chrome
 
@@ -19,6 +25,5 @@ After installing the extension click the new extension icon on any webpage, this
 ## Test
 
 ```
-npm install // Only the first time
-npm run test
+$ npm run test
 ```
