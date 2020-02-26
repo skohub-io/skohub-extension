@@ -93,7 +93,7 @@ var attach = () => {
   })
 
   const style = document.createElement('style')
-  style.innerHTML = styleContent
+  style.appendChild(document.createTextNode(styleContent))
 
   const iframe = document.createElement('iframe')
   iframe.src = url
