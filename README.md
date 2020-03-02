@@ -1,6 +1,6 @@
 # SkoHub WebExtension
 
-WebExtension to send page data to the skohub-editor
+WebExtension to send page data to the [skohub-editor](https://github.com/hbz/skohub-editor)
 
 ## Instructions for installing
 
