@@ -1,11 +1,17 @@
 
 /* global chrome */
-var attach = () => {
+var attach = async () => {
   const EDITOR_URL = 'https://test.skohub.io/editor/'
-  const SCHEMA_URL = 'https://raw.githubusercontent.com/literarymachine/oer-metadata-schemas/generic-OER/oer.json'
+
+  const loadSavedOptions = new Promise((resolve, reject) => {
+    chrome.storage.local.get({ defaultSchema: null }, (options) => {
+      resolve(options)
+    })
+  })
+  const { defaultSchema } = await loadSavedOptions
 
   const url = new URL(EDITOR_URL)
-  url.searchParams.set('schema', SCHEMA_URL)
+  defaultSchema && url.searchParams.set('schema', defaultSchema)
 
   const getMetaTag = (attribute, value) => {
     return (document.querySelector(`meta[${attribute}="${value}"]`) && document.querySelector(`meta[${attribute}="${value}"]`).content) || null

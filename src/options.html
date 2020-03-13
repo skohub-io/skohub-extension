@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Options</title>
+
+  <style>
+    body {
+      padding: 10px 20px;
+      color: hsl(0, 0%, 24%);
+    }
+
+    .formGroup {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .styledInput {
+      background-color: rgb(242, 245, 247);
+      box-shadow: 2px 2px 0 0 hsl(0, 0%, 24%);
+      border: none;
+      cursor: pointer;
+      border: 1px solid hsl(0, 0%, 24%);
+      color: hsl(0, 0%, 24%);
+      padding: 5px 10px;
+    }
+
+    .styledInput:focus,
+    .styledInput:hover {
+      background-color: hsl(192, 8.2%, 88%);
+    }
+
+    #saveBtn {
+      margin-top: 20px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <form id="optionsForm">
+
+    <div class="formGroup">
+      <label for="defaultSchema">
+        Default schema URL
+      </label>
+      <input
+        class="styledInput"
+        type="url"
+        id="defaultSchema"
+        placeholder="https://yourURL..."
+      >
+    </div>
+
+    <button class="styledInput" id="saveBtn" type="submit">
+      Save
+    </button>
+  </form>
+
+  <script src="options.js"></script>
+
+</body>
+</html>
