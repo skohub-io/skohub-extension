@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "short_name": "__MSG_extensionName__",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "default_locale": "en",
 
   "description": "__MSG_extensionDescription__",
@@ -35,6 +35,11 @@
   ],
 
   "permissions": [
-    "activeTab"
-  ]
+    "activeTab",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
 }
