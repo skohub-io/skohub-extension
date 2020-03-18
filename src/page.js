@@ -1,7 +1,7 @@
 
 /* global chrome */
 var attach = async () => {
-  const EDITOR_URL = 'https://test.skohub.io/editor/'
+  const EDITOR_URL = 'https://skohub.io/editor/'
 
   const loadSavedOptions = new Promise((resolve, reject) => {
     chrome.storage.local.get({ defaultSchema: null }, (options) => {
@@ -14,7 +14,8 @@ var attach = async () => {
   defaultSchema && url.searchParams.set('schema', defaultSchema)
 
   const getMetaTag = (attribute, value) => {
-    return (document.querySelector(`meta[${attribute}="${value}"]`) && document.querySelector(`meta[${attribute}="${value}"]`).content) || null
+    return (document.querySelector(`meta[${attribute}="${value}"]`) &&
+      document.querySelector(`meta[${attribute}="${value}"]`).content) || null
   }
 
   const pageGetData = () => {
