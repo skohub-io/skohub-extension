@@ -20,18 +20,20 @@ var attach = async () => {
   const pageGetData = () => {
     return {
       name: getMetaTag('property', 'og:title') ||
-      getMetaTag('name', 'twitter:title') ||
-      document.title,
-      id: getMetaTag('property', 'og:url') || window.location.href,
-      description: getMetaTag('name', 'description') ||
-      getMetaTag('property', 'og:description') ||
-      getMetaTag('name', 'twitter:description'),
+        getMetaTag('name', 'twitter:title') ||
+        document.title,
+      id: getMetaTag('property', 'og:url') ||
+        window.location.href,
+      description: getMetaTag('property', 'og:description') ||
+        getMetaTag('name', 'twitter:description') ||
+        getMetaTag('name', 'description'),
       keywords: getMetaTag('name', 'keywords'),
       author: getMetaTag('name', 'author'),
       image: getMetaTag('property', 'og:image') ||
-      getMetaTag('name', 'twitter:image'),
+        getMetaTag('name', 'twitter:image'),
       locale: getMetaTag('property', 'og:locale'),
-      type: getMetaTag('property', 'og:type') || 'CreativeWork'
+      type: getMetaTag('property', 'og:type')
+        || 'CreativeWork'
     }
   }
 
