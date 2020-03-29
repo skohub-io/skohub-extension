@@ -28,7 +28,6 @@ var attach = async () => {
       description: getMetaTag('property', 'og:description') ||
         getMetaTag('name', 'twitter:description') ||
         getMetaTag('name', 'description'),
-      keywords: getMetaTag('name', 'keywords'),
       author: getMetaTag('name', 'author'),
       image: getMetaTag('property', 'og:image') ||
         getMetaTag('name', 'twitter:image'),
