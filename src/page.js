@@ -33,8 +33,6 @@ var attach = async () => {
       image: getMetaTag('property', 'og:image') ||
         getMetaTag('name', 'twitter:image'),
       locale: getMetaTag('property', 'og:locale'),
-      type: getMetaTag('property', 'og:type')
-        || 'CreativeWork'
     }
   }
 
