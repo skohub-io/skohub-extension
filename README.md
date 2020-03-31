@@ -12,11 +12,13 @@ $ npm install
 
 ### Add to Chrome
 
-In `Extensions`, enable Developer mode, click `load unpacked` and open the directory `skohub-extension/src`.
+- Add extension from the Chrome Web Store: https://chrome.google.com/webstore/detail/skohub/ghalhmcgaicdcpmdicinaegnoanfmggd
+- Alternatively, you can load the unpacked extension from the repo: In `Extensions`, enable Developer mode, click `load unpacked` and open the directory `skohub-extension/src`.
 
 ### Add to Firefox
 
-Go to `Add-ons` in `Tools for Add-ons` click `Debug Add-ons` and load a new temporary add-on selecting the manifest in `skohub-extension/src`. Alternatively, you can directly launch Firefox with a temporary profile by running `npm run start:firefox`
+- Add the official extension from https://addons.mozilla.org/firefox/addon/skohub-extension/ 
+- Alternatively, go to `Add-ons` in `Tools for Add-ons` click `Debug Add-ons` and load a new temporary add-on selecting the manifest in `skohub-extension/src`. You can also directly launch Firefox with a temporary profile by running `npm run start:firefox`
 
 ## Usage
 
