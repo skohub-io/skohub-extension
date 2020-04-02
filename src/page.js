@@ -46,7 +46,7 @@ var attach = async () => {
       },
       body: `text=${encodeURIComponent(data.name)}&limit=1`
     }).then(response => response.json())
-    return response.results ? {
+    return response.results && response.results[0] ? {
       id: response.results[0].uri,
       prefLabel: {
         de: response.results[0].label
@@ -59,7 +59,7 @@ var attach = async () => {
   }
 
   const suggest = await getSuggest()
-  suggest.id && (data.about = [suggest])
+  suggest && (data.about = [suggest])
 
   Object.entries(data)
     .filter(([key, val]) => val !== null)
