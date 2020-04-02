@@ -31,7 +31,7 @@ var attach = async () => {
       author: getMetaTag('name', 'author'),
       image: getMetaTag('property', 'og:image') ||
         getMetaTag('name', 'twitter:image'),
-      locale: getMetaTag('property', 'og:locale'),
+      locale: getMetaTag('property', 'og:locale')
     }
   }
 
@@ -42,7 +42,7 @@ var attach = async () => {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
+        Accept: 'application/json'
       },
       body: `text=${encodeURIComponent(data.name)}&limit=1`
     }).then(response => response.json())
