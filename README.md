@@ -5,7 +5,7 @@ WebExtension to send page data to the [skohub-editor](https://github.com/hbz/sko
 ## Instructions for installing
 
 ```
-$ git clone https://github.com/hbz/skohub-extension.git
+$ git clone https://github.com/skohub-io/skohub-extension.git
 $ cd skohub-extension
 $ npm install
 ```
