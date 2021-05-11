@@ -31,15 +31,40 @@ var attach = async () => {
       author: getMetaTag('name', 'author'),
       image: getMetaTag('property', 'og:image') ||
         getMetaTag('name', 'twitter:image'),
-      locale: getMetaTag('property', 'og:locale'),
+      locale: getMetaTag('property', 'og:locale')
     }
   }
 
   const data = pageGetData()
+
+  const getSuggest = async () => {
+    const response = await fetch('https://test.skohub.io/suggest', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Accept: 'application/json'
+      },
+      body: `text=${encodeURIComponent(data.name)}&limit=1`
+    }).then(response => response.json())
+    return response.results && response.results[0] ? {
+      id: response.results[0].uri,
+      prefLabel: {
+        de: response.results[0].label
+      },
+      type: 'Concept',
+      inScheme: {
+        id: 'https://w3id.org/kim/hochschulfaechersystematik/scheme'
+      }
+    } : null
+  }
+
+  const suggest = await getSuggest()
+  suggest && (data.about = [suggest])
+
   Object.entries(data)
     .filter(([key, val]) => val !== null)
     .forEach(([key, value]) => {
-      url.searchParams.set(key, encodeURIComponent(value))
+      url.searchParams.set(key, encodeURIComponent(JSON.stringify(value)))
     })
 
   const styleContent = `
